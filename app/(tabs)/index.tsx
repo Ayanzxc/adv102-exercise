@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         flex: 1,
          justifyContent: 'center',
          alignItems: 'center',
-        backgroundColor: 'grey',
+        backgroundColor: '#ADD8E6',
     },
     child1: {
         flex: 5,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
     },
     text: {
-        color: 'white',
+        color: 'black',
         fontSize: 34
     }
 })

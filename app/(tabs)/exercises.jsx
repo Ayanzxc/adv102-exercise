@@ -4,11 +4,11 @@ import HTMLView from "react-native-htmlview";
 
 export default function Exercise() {
     const exercises = [
-        { title: "Exercise 3", description: "<p>Create login screen<br>Login screen fields:<ul><li>Email</li><li>Password</li></ul></p>" },
-        { title: "Exercise 4", description: "<p>useState/useEffect</p>" },
-        { title: "Exercise 5", description: "<p>Some other description</p>" },
-        { title: "Exercise 6", description: "<p>Some other description</p>" },
-        { title: "Exercise 7", description: "<p>Some other description</p>" },
+        { title: "Exercise 3", description: "<p>Create login screen<br>Login screen fields:<ul><li>Email</li><li>Password</li></ul></p>", route: "/login" },
+        { title: "Exercise 4", description: "<p>useState/useEffect</p>", route: "/exercise_4" },
+        { title: "Exercise 5", description: "<p>Register Screen</p>", route: "/register" },
+        { title: "Exercise 6", description: "<p>Some other description</p>", route: "/exercise_6" },
+        { title: "Exercise 7", description: "<p>Some other description</p>", route: "/exercise_7" },
     ];
 
     return (
@@ -17,20 +17,7 @@ export default function Exercise() {
                 <TouchableOpacity
                     key={index}
                     style={styles.card}
-                    onPress={() => {
-                        if (index === 0) {
-
-                            router.push("/login");
-                        }
-                        else if (index === 1) {
-                            router.push("/exercise_4");
-                        }
-                        else {
-                            undefined
-                        }
-
-                        
-                    }}
+                    onPress={() => router.push(exercise.route)}
                 >
                     <Text style={styles.title}>{exercise.title}</Text>
                     <HTMLView value={exercise.description} stylesheet={htmlStyles} />
@@ -43,9 +30,10 @@ export default function Exercise() {
 const styles = StyleSheet.create({
     container: {
         padding: 10,
+        backgroundColor: "#f5f5f5",
     },
     card: {
-        backgroundColor: "skyblue",
+        backgroundColor: "#AEC6CF",
         padding: 15,
         marginVertical: 8,
         borderRadius: 10,
